@@ -82,16 +82,25 @@ def get_dictionary(dictionary_file):
     with open(dictionary_file) as f:
         return [w.strip().upper() for w in f]
         
+def display_words(words):
+    print([word for word in words])
+        #print(word)
+    print("Found %s words" % len(words))
+        
 def main():
     """
     This is the function that will run the whole project
     """
     grid = make_grid(3, 3)
+    """
+    Here you can change your grid from a 3x3 to a 2x2 to test run times
+    """
     dictionary = get_dictionary("bogwords.txt")
     words = set(search(grid, dictionary))
-    for word in words:
-        print(word)
-    print("Found %s words" % len(words))
+    # for word in words:
+    #     print(word)
+    # print("Found %s words" % len(words))
+    display_words(words)
 
 if __name__ == "__main__":     
     
