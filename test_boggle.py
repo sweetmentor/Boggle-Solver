@@ -83,7 +83,9 @@ class TestBoggle(unittest.TestCase):
         twoLetterWord = 'AB'
         threeLetterWord = 'ABC'
         notThereWord = 'EEE'
-        dictionary = [twoLetterWord, threeLetterWord, notThereWord]
+        fullWords = [twoLetterWord, threeLetterWord, notThereWord] # modify to match the new code
+        stems = ['A', 'AB', 'E', 'EE']
+        dictionary = fullWords, stems
         
         foundWords = boggle.search(grid, dictionary)
         
